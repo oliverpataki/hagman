@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Wispr Flow</string>
+    <string name="subtitle">Hlasové diktování s AI</string>
+    <string name="accessibility_service_label">Wispr Flow – vkládání textu</string>
+    <string name="notification_text">Klepněte na mikrofon a mluvte</string>
+
+    <!-- Permissions -->
+    <string name="permissions">Oprávnění</string>
+    <string name="overlay_permission">Překrytí obrazovky</string>
+    <string name="accessibility_permission">Accessibility service</string>
+    <string name="microphone_permission">Mikrofon</string>
+    <string name="set_up">Nastavit</string>
+    <string name="grant_overlay_first">Nejdřív povolte překrytí obrazovky</string>
+
+    <!-- Service -->
+    <string name="floating_button">Plovoucí tlačítko</string>
+    <string name="floating_button_desc">Klepnutím na plovoucí mikrofon spustíte nahrávání</string>
+    <string name="start">Spustit</string>
+    <string name="stop">Zastavit</string>
+    <string name="service_started">Plovoucí mikrofon spuštěn</string>
+    <string name="service_stopped">Plovoucí mikrofon zastaven</string>
+
+    <!-- Settings -->
+    <string name="settings">Nastavení</string>
+    <string name="api_key_hint">Claude API klíč (volitelné)</string>
+    <string name="ai_cleanup">AI čištění textu</string>
+    <string name="ai_cleanup_desc">Oprava gramatiky přes Claude API</string>
+    <string name="language">Jazyk rozpoznávání</string>
+    <string name="save_settings">Uložit nastavení</string>
+    <string name="settings_saved">Nastavení uloženo</string>
+
+    <!-- History -->
+    <string name="history">Historie přepisů</string>
+    <string name="clear">Vymazat</string>
+    <string name="no_history">Žádné záznamy</string>
+
+    <!-- Result bubble -->
+    <string name="insert">Vložit</string>
+    <string name="copy">Kopírovat</string>
+    <string name="dismiss">Zavřít</string>
+    <string name="copied">Zkopírováno</string>
+    <string name="cleaning_up">Čistím text…</string>
+
+    <!-- Mic -->
+    <string name="mic_button_desc">Mikrofon – klepnutím nahrajte</string>
+
+    <!-- Errors -->
+    <string name="speech_unavailable">Rozpoznávání řeči není dostupné</string>
+    <string name="error_audio">Chyba mikrofonu</string>
+    <string name="error_network">Chyba sítě</string>
+    <string name="error_timeout">Nevyslovili jste nic</string>
+    <string name="error_generic">Chyba rozpoznávání</string>
+</resources>

@@ -1,0 +1,65 @@
+name: Build APK
+
+on:
+  push:
+    branches: [ main, claude/create-wispr-flow-app-uZW9y ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug --no-daemon
+
+      - name: Rename APK
+        run: cp app/build/outputs/apk/debug/app-debug.apk WisprFlow.apk
+
+      - name: Upload APK as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: WisprFlow-debug
+          path: WisprFlow.apk
+          retention-days: 30
+
+      - name: Create or update Release with APK
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest-build
+          name: "Wispr Flow – nejnovější build"
+          body: |
+            ## Jak nainstalovat
+
+            1. **Stáhni** soubor `WisprFlow.apk` níže (tlačítko Assets)
+            2. **Přenes** do telefonu (přes kabel, Google Drive, email…)
+            3. **Otevři** soubor v telefonu a klepni **Instalovat**
+               - Pokud Android zablokuje instalaci: Nastavení → Aplikace → Speciální přístup → Instalovat neznámé aplikace → povol pro Soubory
+            4. **Spusť** aplikaci a nastav oprávnění (překrytí + accessibility + mikrofon)
+
+            ## Použití
+            - Klepni **Spustit** → na obrazovce se objeví fialový mikrofon
+            - Klepni na mikrofon → mluv → přepsaný text se zobrazí
+            - **Vložit** = vloží text do aktivního pole | **Kopírovat** = zkopíruje
+          files: WisprFlow.apk
+          make_latest: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

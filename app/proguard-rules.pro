@@ -1,0 +1,2 @@
+-keep class com.wisprflow.** { *; }
+-keep class okhttp3.** { *; }

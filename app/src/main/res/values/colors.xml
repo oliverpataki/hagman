@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6750A4</color>
+    <color name="colorPrimaryVariant">#3700B3</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSecondary">#03DAC5</color>
+    <color name="colorBackground">#FFFBFE</color>
+    <color name="colorSurface">#FFFBFE</color>
+    <color name="colorError">#B3261E</color>
+    <color name="mic_active">#E53935</color>
+    <color name="mic_idle">#6750A4</color>
+</resources>
